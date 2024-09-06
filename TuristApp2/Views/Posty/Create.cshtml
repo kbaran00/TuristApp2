@@ -1,0 +1,33 @@
+﻿@model Posty
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<form method="post" asp-action="Create">
+  <div class="form-group">
+    <label asp-for="Title">Tytul posta</label>
+    <input asp-for="Title" class="form-control" placeholder="Title">
+    <span asp-validation-for="Title" class="text-danger"></span>
+  </div>
+
+    <div class="form-group">
+        <label asp-for="Opis">Opis</label>
+        <input asp-for="Opis" class="form-control" placeholder="Opis">
+        <span asp-validation-for="Opis" class="text-danger"></span>
+    </div>
+
+        <div class="form-group">
+         <label asp-for="MiejscaId">Id_miejsca</label>
+        <input asp-for="MiejscaId" class="form-control" placeholder="MiejscaId">
+        <span asp-validation-for="MiejscaId" class="text-danger"></span>
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="AppUserId">Nazwa urzytkownika</label>
+        <input asp-for="AppUserId" class="form-control" placeholder="AppUserId">
+        <span asp-validation-for="AppUserId" class="text-danger"></span>
+    </div>
+  <button type="submit" class="btn btn-primary">Utworz post</button>
+</form>

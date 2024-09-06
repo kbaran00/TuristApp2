@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Posty>
+
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<h1>Posty</h1>
+
+
+<div class="album py-5 bg-light">
+    <div class="container">
+
+    @foreach (var item in Model)
+    {
+        <div class="row">
+            <div class="card mb-4 box-shadow">
+                <div class="card-body">
+                    <p class="card-text">Tytuł: @item.Title</p>
+                    <p class="card-text">Opis: @item.Opis</p>
+                    <p>Dodane przez: @item.AppUser.UserName</p>
+                </div>
+                      <div class="btn-group">
+                        <a type="button" class="btn btn-sm btn-outline-info" asp-controller="Posty" asp-action="Delete" asp-route-id="@item.Id">
+                            Delete
+                        </a>
+                    </div>
+            </div>
+        </div>
+    }
+
+    </div>
+</div>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+<script src="../../assets/js/vendor/popper.min.js"></script>
+<script src="../../dist/js/bootstrap.min.js"></script>
+<script src="../../assets/js/vendor/holder.min.js"></script>
